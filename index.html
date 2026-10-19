@@ -19,43 +19,53 @@
             background-size: cover;      
             background-position: center; 
             height: 400px;               
-            /* 这里已经去掉了文字，只保留纯背景图 */
         }
 
         /* ====== 主体内容区域（包含左右两栏） ====== */
         .main-content {
-            max-width: 1100px;    /* 加宽一点，为了放下左右两栏 */
+            max-width: 1100px;    
             margin: 50px auto;    
             padding: 0 20px;
-            display: flex;        /* 开启左右分栏布局 */
-            gap: 40px;            /* 左右两栏之间的间距 */
-            align-items: flex-start; /* 顶部对齐 */
+            display: flex;        
+            gap: 40px;            
+            align-items: flex-start; 
         }
 
         /* 左侧文字介绍区域 */
         .intro-text {
-            flex: 1.2;            /* 左侧文字占据稍微多一点的空间 */
+            flex: 1.2;            
             line-height: 1.7;
             font-size: 15px;
             color: #444;
         }
         
         .intro-text p {
-            margin-bottom: 15px;  /* 段落之间的间距 */
+            margin-bottom: 15px;  
         }
 
-        /* 右侧图片区域 */
+        /* 左侧图片统一格式 */
+        .intro-text img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+            margin-top: 20px; /* 距离上方文字的距离 */
+        }
+
+        /* 右侧动图区域 */
         .image-area {
-            flex: 1;              /* 右侧图片占据剩余空间 */
-            position: sticky;     /* 让图片在滚动时有一种跟随感（可选） */
+            flex: 1;              
+            position: sticky;     
             top: 20px;
         }
 
+        /* 右侧图片统一格式 */
         .image-area img {
             width: 100%;
             height: auto;
             border-radius: 8px; 
             box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+            margin-bottom: 20px; 
         }
 
         /* ====== 底部隐私政策区域 ====== */
@@ -73,7 +83,7 @@
             font-size: 20px;
         }
 
-        /* 如果屏幕较小（比如手机），则取消左右分栏，改为上下排列 */
+        /* 手机端适配 */
         @media (max-width: 768px) {
             .main-content {
                 flex-direction: column;
@@ -89,10 +99,10 @@
     <!-- 顶部横幅区域 -->
     <div class="hero-banner"></div>
 
-    <!-- 主体内容区域：左边文字，右边图片 -->
+    <!-- 主体内容区域：左边文字+静态图，右边动图 -->
     <div class="main-content">
         
-        <!-- 左侧文字 -->
+        <!-- 左侧区域 -->
         <div class="intro-text">
             <p>As a supernatural being of the elf race, you once possessed dazzling wings. Regrettably, outmatched in combat, you were shattered by the dark supernatural "Nine Heavens God Luo" and divided into seven fragments, each entrusted to different beasts for control.</p>
             
@@ -106,14 +116,14 @@
 
             <p style="margin-top: 30px;"><strong>开发者：</strong>GDBaiMei</p>
             <p><a href="https://store.steampowered.com/app/3836940/" target="_blank">Steam 商店页面</a></p>
+
+            <!-- 【修改处】：把原本在右侧的静态大图移到了这里（B区域） -->
+            <img src="https://baimei901-oss.github.io/Realmnine/E1232-706.jpg" alt="游戏截图">
         </div>
 
-        <!-- 右侧游戏截图与动图区域 -->
+        <!-- 右侧区域 -->
         <div class="image-area">
-            <!-- 原有的静态游戏截图 -->
-            <img src="https://baimei901-oss.github.io/Realmnine/E1232-706.jpg" alt="游戏截图">
-            
-            <!-- 依次排列的三张动图 -->
+            <!-- 【修改处】：右侧现在只保留三张动图 -->
             <img src="Gif_Transform.gif" alt="Transform Gameplay">
             <img src="Gif_Release.gif" alt="Release Gameplay">
             <img src="Gif_Float.gif" alt="Float Gameplay">
