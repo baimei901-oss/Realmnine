@@ -15,69 +15,111 @@
 
         /* ====== 顶部横幅区域 ====== */
         .hero-banner {
-            /* 使用你新上传的 1920-400 图片 */
             background-image: url('1920-400.jpg'); 
             background-size: cover;      
             background-position: center; 
-            height: 400px;               /* 高度与你的图片比例匹配 */
-            display: flex;               
-            flex-direction: column;
-            justify-content: center;     
-            align-items: center;         
-            text-align: center;
+            height: 400px;               
+            /* 这里已经去掉了文字，只保留纯背景图 */
         }
 
-        /* 横幅上的大标题 */
-        .hero-banner h1 {
-            color: #ffffff; /* 考虑到横幅通常是深色图片，字设为白色 */
-            font-size: 3.5rem;
-            margin: 0;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* 加一层黑色阴影保证文字清晰 */
-        }
-
-        /* ====== 下方正文内容区域 ====== */
-        .content-container {
-            max-width: 800px;          
-            margin: 40px auto;         
+        /* ====== 主体内容区域（包含左右两栏） ====== */
+        .main-content {
+            max-width: 1100px;    /* 加宽一点，为了放下左右两栏 */
+            margin: 50px auto;    
             padding: 0 20px;
-            line-height: 1.8;          
+            display: flex;        /* 开启左右分栏布局 */
+            gap: 40px;            /* 左右两栏之间的间距 */
+            align-items: flex-start; /* 顶部对齐 */
         }
 
-        .content-container h2 {
-            color: #111111;
-            margin-top: 40px;
-        }
-
-        .content-container a {
-            color: #0066cc;            
+        /* 左侧文字介绍区域 */
+        .intro-text {
+            flex: 1.2;            /* 左侧文字占据稍微多一点的空间 */
+            line-height: 1.7;
+            font-size: 15px;
+            color: #444;
         }
         
-        /* 让正文里的游戏截图自适应宽度 */
-        .content-container img {
-            max-width: 100%;
+        .intro-text p {
+            margin-bottom: 15px;  /* 段落之间的间距 */
+        }
+
+        /* 右侧图片区域 */
+        .image-area {
+            flex: 1;              /* 右侧图片占据剩余空间 */
+            position: sticky;     /* 让图片在滚动时有一种跟随感（可选） */
+            top: 20px;
+        }
+
+        .image-area img {
+            width: 100%;
             height: auto;
             border-radius: 8px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+        }
+
+        /* ====== 底部隐私政策区域 ====== */
+        .footer-content {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            border-top: 1px solid #eeeeee;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer-content h2 {
+            color: #111111;
+            font-size: 20px;
+        }
+
+        /* 如果屏幕较小（比如手机），则取消左右分栏，改为上下排列 */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .image-area {
+                position: static;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- 顶部横幅区域 -->
-    <div class="hero-banner">
+    <div class="hero-banner"></div>
+
+    <!-- 主体内容区域：左边文字，右边图片 -->
+    <div class="main-content">
+        
+        <!-- 左侧文字 -->
+        <div class="intro-text">
+            <p>As a supernatural being of the elf race, you once possessed dazzling wings. Regrettably, outmatched in combat, you were shattered by the dark supernatural "Nine Heavens God Luo" and divided into seven fragments, each entrusted to different beasts for control.</p>
+            
+            <p>You must continuously defeat enemies to earn skill points, enhance your talents, and gather and upgrade equipment to grow stronger, so you can reclaim the glory of the Elven race—the Wings of the Elves—from the beastmen and the Nine Heavens Divine Order.</p>
+            
+            <p>In addition to the spirit form, four other character forms have been unlocked. You can switch your character form in real time to adapt to different terrains and enemies.</p>
+            
+            <p>In the floating island map, you can use an automated cruising aircraft for transportation and shoot down energy balls in the sky to earn coins, equipment, and more. Experience real-time transformation and aerial combat, while keeping an eye on your mana, health, and soul values. You can exchange coins for these at the spaceship store. With over 40 types of monsters, including ground melee fighters, archers, mages, birds, beasts, insects, and more, it's all waiting for you to challenge.</p>
+            
+            <p><strong>Gameplay:</strong> You can engage in combat with enemies using swords, polearms, whips, and a variety of spells. Additionally, you can freely summon werewolves, mages, dragon knights, and elven spirits to assist you in battling formidable foes.</p>
+
+            <p style="margin-top: 30px;"><strong>开发者：</strong>GDBaiMei</p>
+            <p><a href="https://store.steampowered.com/app/3836940/" target="_blank">Steam 商店页面</a></p>
+        </div>
+
+        <!-- 右侧游戏截图 -->
+        <div class="image-area">
+            <img src="https://baimei901-oss.github.io/Realmnine/E1232-706.jpg" alt="游戏截图">
+        </div>
+        
     </div>
 
-    <!-- 下方正文内容区域 -->
-    <div class="content-container">
-        <!-- 游戏截图 -->
-        <img src="https://baimei901-oss.github.io/Realmnine/E1232-706.jpg" alt="游戏截图">
-        
-        <p><strong>开发者：</strong>GDBaiMei</p>
-        <p><strong>游戏简介：</strong>On the land of Jiuzhou, you will play as five types of real-time shapeshifters, searching for fragments of the Lost Elf Wings.</p>
-        <p><a href="https://store.steampowered.com/app/3836940/">Steam 商店页面</a></p>
-        
-        <h2>隐私政策</h2>
+    <!-- 底部隐私政策区域 -->
+    <div class="footer-content">
+        <h2>隐私政策 / Privacy Policy</h2>
         <p>本游戏不会收集或分享任何个人数据。如需联系，请发送邮件至 954799708@qq.com。</p>
+        <p>This game does not collect or share any personal data. For contact, please email 954799708@qq.com.</p>
     </div>
 
 </body>
