@@ -1,20 +1,85 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<title>Realmnine</title>
-<style>
-body { font-family: sans-serif; max-width: 700px; margin: 60px auto; line-height: 1.6; padding: 0 20px; }
-h1 { color: #333; }
-</style>
+    <meta charset="UTF-8">
+    <title>RealmNine</title>
+    <style>
+        /* 基础页面设置：白底黑字，取消默认边距 */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; 
+            color: #333333;            
+            font-family: sans-serif;
+        }
+
+        /* ====== 顶部横幅区域 ====== */
+        .hero-banner {
+            /* 使用你新上传的 1920-400 图片 */
+            background-image: url('1920-400.jpg'); 
+            background-size: cover;      
+            background-position: center; 
+            height: 400px;               /* 高度与你的图片比例匹配 */
+            display: flex;               
+            flex-direction: column;
+            justify-content: center;     
+            align-items: center;         
+            text-align: center;
+        }
+
+        /* 横幅上的大标题 */
+        .hero-banner h1 {
+            color: #ffffff; /* 考虑到横幅通常是深色图片，字设为白色 */
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* 加一层黑色阴影保证文字清晰 */
+        }
+
+        /* ====== 下方正文内容区域 ====== */
+        .content-container {
+            max-width: 800px;          
+            margin: 40px auto;         
+            padding: 0 20px;
+            line-height: 1.8;          
+        }
+
+        .content-container h2 {
+            color: #111111;
+            margin-top: 40px;
+        }
+
+        .content-container a {
+            color: #0066cc;            
+        }
+        
+        /* 让正文里的游戏截图自适应宽度 */
+        .content-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+    </style>
 </head>
 <body>
-<h1>Realm Nine</h1>
-<img src="https://baimei901-oss.github.io/Realmnine/E1232-706.jpg" alt="游戏截图" style="max-width: 100%;">
-<p><strong>开发者：</strong>GDBaiMei</p>
-<p><strong>游戏简介：</strong>On the land of Jiuzhou, you will play as five types of real-time shapeshifters, searching for fragments of the Lost Elf Wings.</p>
-<p><a href="https://store.steampowered.com/app/3836940/_/">Steam 商店页面</a></p>
-<h2>隐私政策</h2>
-<p>本游戏不会收集或分享任何个人数据。如需联系，请发送邮件至 954799708@qq.com。</p>
+
+    <!-- 顶部横幅区域 -->
+    <div class="hero-banner">
+        <h1>Realm Nine</h1>
+    </div>
+
+    <!-- 下方正文内容区域 -->
+    <div class="content-container">
+        <!-- 游戏截图 -->
+        <img src="https://baimei901-oss.github.io/Realmnine/E1232-706.jpg" alt="游戏截图">
+        
+        <p><strong>开发者：</strong>GDBaiMei</p>
+        <p><strong>游戏简介：</strong>On the land of Jiuzhou, you will play as five types of real-time shapeshifters, searching for fragments of the Lost Elf Wings.</p>
+        <p><a href="https://store.steampowered.com/app/3836940/">Steam 商店页面</a></p>
+        
+        <h2>隐私政策</h2>
+        <p>本游戏不会收集或分享任何个人数据。如需联系，请发送邮件至 954799708@qq.com。</p>
+    </div>
+
 </body>
 </html>
